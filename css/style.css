@@ -1,0 +1,484 @@
+/*GENERAL DE LA PAGE*/
+
+body{
+    font-family: 'lato', sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-weight: bold;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+section{
+    padding: 45px 0px 80px 0px;
+}
+
+section > .heading{
+    text-align: center;
+    padding-bottom: 40px;
+}
+
+.blue-divider{
+    width: 100px;
+    height: 2px;
+    background-color: #128293;
+    margin: 0 auto;
+}
+
+.white-divider{
+    width: 100px;
+    height: 2px;
+    background-color: #fff;
+    margin: 0 auto;
+}
+
+/*NAV*/
+
+.navbar{
+    background-color: #128293;
+    font-size: 17px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #fff;
+    border-bottom: 1px solid #fff;
+
+}
+
+.navbar > .navbar-nav{
+    display: inline-block;
+    float: none;
+    vertical-align: top;
+}
+
+.navbar > .navbar-collapse{
+    text-align: center;
+}
+
+/*.navbar > .navbar-collapse > .navbar-nav > .topnav-centered > a {
+    float: none;
+    position: relative;
+}
+
+@media screen and (max-width: 600px) {
+    .topnav a {
+        float: none;
+        display: block;
+    }
+
+    .topnav-centered a {
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: none;
+    }
+}*/
+
+
+.navbar > .navbar-collapse > .navbar-nav > .nav-item > .nav-link{
+    color: #fff !important;
+    border-radius: 3px;
+}
+
+.navbar > .navbar-collapse > .navbar-nav > .nav-item > .nav-link:hover{
+    color: #128293 !important;
+    background-color: #fff !important;
+}
+
+.navbar > .navbar-toggler{
+    border-style: none;
+}
+
+.navbar > .navbar-toggler > i{
+    color: #fff;
+}
+
+/*ABOUT*/
+
+#about{
+    padding-top: 100px;
+    /*background-color: #d82c2e;*/
+    background-color: #128293;
+}
+
+section > .profile-picture{
+    text-align: center;
+    margin: 0 auto;
+    float: none;
+}
+
+#about > .heading > h1{
+    color: #fff;
+    text-transform: uppercase;/*mets en majuscules*/
+    text-shadow: 1px 2px 2px #000;
+}
+
+#about > .heading > h3{
+    color: #000;
+}
+
+#about > .heading > .button1{
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 1px 2px 2px #000;
+    color: #fff;
+    border: 1px solid #fff;
+    display: inline-block;
+    margin-top: 20px;
+    padding: 18px 50px;
+    border-radius: 3px;
+    transition: all 0.3s ease-in 0s;
+}
+
+#about > .heading > .button1:hover{
+    background-color: #fff;
+    color: #128293;
+    text-decoration: none;
+    text-shadow: none;
+
+}
+
+/*SKILLS*/
+
+#skills{
+    background-color: #fff;
+}
+
+#skills > .heading2 > h2{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #128293;
+    text-transform: uppercase;
+}
+
+#skills > .container > .row > .col-md-6 > .progress{
+    height: 14%;
+    margin: 30px 20px 30px 20px;
+    background-color: #c6b5b5;
+}
+
+#skills > .container > .row > .col-md-6 > .progress > .progress-bar{
+    background-color: #128293;
+}
+#skills > .container > .row > .col-md-6 > .progress > .progress-bar > h6{
+    text-shadow: 1px 2px 2px #000;
+    padding: 10px;
+    font-size: 13px;
+}
+
+/*EXPERIENCE*/
+
+#experience{
+    background-color: #128293;
+}
+
+#experience > .container > .heading3 > h2{
+    color: #fff;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    text-transform: uppercase;
+
+}
+
+#experience > .container > .timeline{
+    padding: 30px 10px;
+    position: relative;
+}
+
+#experience > .container > .timeline:before{
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    content: " ";
+    width: 5px;
+    background-color: #333;
+    left: 50%;
+    margin-left: -2.5px;
+} /*me permet d avoir le diviser du work timeline*/
+
+#experience > .container > ul{
+    list-style: none;
+}
+
+#experience > .container > .timeline > li{
+    margin-bottom: 20px;
+    position: relative;
+}
+
+#experience > .container > .timeline > li:after{
+    clear: both; /*nettoie les float*/
+}
+
+#experience > .container > .timeline > li:before ,
+#experience > .container > .timeline > li:after{
+    content: " ";
+    display: table;
+}
+
+.timeline > li > .timeline-badge{
+    color: #128293;
+    width: 60px;
+    line-height: 50px;
+    font-size: 20px;
+    text-align: center;
+    position: absolute;
+    top: 16px;
+    left: 49.5%;
+    margin-left: -25px;
+    background-color: #c6b5b5;
+    border-radius: 55%;
+}
+
+.timeline > li > .timeline-badge > i{
+    padding-top: 6px;
+}
+
+#experience > .container > .timeline > li > .timeline-panel-container{
+    width: 50%;
+    float: left;
+}
+
+#experience > .container > .timeline > li > .timeline-panel-container-inverted{
+    width: 50%;
+    float: right;
+}
+.timeline-panel{
+    width: 90%;
+    float: right;
+    margin-right: 40px;
+    padding: 25px;
+    border: 1px solid #d4d4d4;
+    border-radius: 7px;
+    position: relative;
+    box-shadow: 0 1px 6px rgba(0,0,0, 0.175);
+    background-color: #fff;
+}
+
+#experience > .container > .timeline > li > .timeline-panel-container-inverted > .timeline-panel{
+    float: left;
+    margin-left: 40px;
+}
+
+.timeline-panel:after{
+    position: absolute;
+    top: 27px;
+    right: -12px;
+    display: inline-block;
+    border-top: 12px solid transparent;
+    border-left: 12px solid #fff;
+    border-right: 0 solid #fff;
+    border-bottom: 12px solid transparent;
+    content: " ";/*contenue vide pour que le after le remplisse*/
+}
+
+#experience > .container > .timeline > li > .timeline-panel-container-inverted >.timeline-panel:after{
+    border-left-width: 0;
+    border-right-width: 12px;
+    left: -12px;
+    right: auto;
+}
+
+.timeline-panel > .timeline-heading > h3{
+    margin-top: 5px;
+
+}
+
+.timeline-panel > .timeline-heading > h4{
+    color: #128293;
+    font-size: 20px;
+}
+
+.timeline-panel > .timeline-heading > .timeline-body > .button-site{
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #128293;
+    border: 1px solid #128293;
+    display: inline-block;
+    margin-top: 20px;
+    padding: 18px 50px;
+    border-radius: 3px;
+    transition: all 0.3s ease-in 0s;
+}
+
+.timeline-panel > .timeline-heading > .timeline-body > .button-site:hover{
+    background-color: #128293;
+    color: #fff;
+    text-decoration: none;
+    text-shadow: none;
+}
+
+/*EDUCATION*/
+
+#education{
+    background-color: #fff;
+}
+
+#education > .container > .heading4 > h2{
+    color: #128293;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.education-block{
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 30px;
+    background-color: #c6b5b5;
+    border-radius: 10px;
+    border: 2px solid #a49797;
+    margin-bottom: 20px;
+}
+
+.education-block > h5{
+    color: #5d5656;
+    font-size: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.education-block > h3{
+    color: #128293;
+    margin-bottom: 20px;
+}
+
+.education-block > h4{
+    margin-bottom: 20px;
+}
+
+.education-block > p{
+    font-weight: bold;
+}
+
+.education-block > .blue-divider{
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/*PORTFOLIO*/
+#portfolio{
+    background-color: #128293;
+}
+
+#portfolio > .container > .heading5 > h2{
+    color: #fff;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+#portfolio > .container > .row > .col-sm-4{
+    margin-top: 25px;
+}
+
+#portfolio > .container > .row > .col-sm-4 > a > img{
+    width: 100%;
+    height: 100%;
+    margin-top: 20px;
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+}
+
+#portfolio > .container > .row > .col-sm-4 > a > img:hover{
+    filter: none;
+    -webkit-filter: none;
+}
+
+/*FOOTER*/
+
+footer{
+    background-color: #333;
+    padding: 20px 0 40px;
+}
+
+footer > .container > h2 {
+    color: #fff;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+footer > .container > .row > .col-md-6{
+    margin-top: 20px;
+}
+
+footer > .container > .row > .col-md-6 > .timeline-panel-container > .timeline-panel > .timeline-heading > h3{
+    color: #128293;
+}
+
+footer > .container > .row > .col-md-6 > .timeline-panel-container > .timeline-panel > .timeline-heading > a{
+    color: #128293;
+}
+
+footer > .container > .row > .col-md-6 > .timeline-panel-container > .timeline-panel > .timeline-heading > a:hover{
+    color: #333;
+    text-decoration: none;
+}
+
+footer > .container > .row > .col-md-6 > iframe{
+    border-radius: 7px;
+}
+
+/*CONTACT*/
+
+#contact-form{
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #128293;
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.white{
+    color: #fff;
+}
+
+.form-control{
+    height: 50px;
+    font-size: 18px;
+}
+
+.comments{
+    font-style: italic;
+    font-size: 18px;
+    color: #d82c2e;
+    height: 25px;
+}
+
+#contact-form > input[type=submit]{
+    margin: 40px auto 0px;
+    display: block;
+}
+
+.button-form{
+    border: 1px solid #ddd;
+    background-color: #fff;
+    color: #128293;
+    width: 100%;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 18px;
+    border-radius: 5px;
+    transition: all 0.3s ease-in 0s;
+}
+
+.button-form:hover{
+    background-color: #128293;
+    color: #fff;
+}
+
+.thank-you{
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 22px;
+}
