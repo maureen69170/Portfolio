@@ -1,87 +1,4 @@
-<?php
-    /*avant que l'utilisateur submit ses informations*/
-    $firstname = $lastname = $mail = $phone = $message = "";
-    $firstnameError = $lastnameError = $mailError = $phoneError = $messageError = "";
-    $isSuccess = false;
-    $mailTo = "maureen.depresle@gmail.com";
 
-    /*Montre les valeurs que l'utilisateur a submit grace a la value*/
-    if ($_SERVER["REQUEST_METHOD"] == "POST"){
-        $firstname = veryfyInput($_POST["firstname"]);
-        $lastname = veryfyInput($_POST["lastname"]);
-        $mail = veryfyInput($_POST["mail"]);
-        $phone = veryfyInput($_POST["phone"]);
-        $message = veryfyInput($_POST["message"]);
-        $isSuccess = true;
-        $mailText = "";
-
-        if(empty($firstname)){
-            $firstnameError = "Oubliez pas d'entrer votre prénom !";
-            $isSuccess = false;
-        }else{
-            $mailText .= "Prénom: $firstname\n";
-        }
-
-        if(empty($lastname)){
-            $lastnameError = "Oubliez pas aussi d'entrer votre nom !";
-            $isSuccess = false;
-        }else{
-            $mailText .= "Nom: $lastname\n";
-        }
-
-        if(!isMail($mail)){
-            $mailError = "Pour vous répondre ça serait mieux d'avoir un mail valide ;) !";
-            $isSuccess = false;
-        }else{
-            $mailText .= "Mail: $mail\n";
-        }
-
-        if(!isPhone($phone)){
-            $phoneError = "Le champ prends que des chiffres et des espaces !";
-            $isSuccess = false;
-        }else{
-            $mailText .= "Téléphone: $phone\n";
-        }
-
-        if(empty($message)){
-            $messageError = "Oops vous n'avez pas rentré votre message !";
-            $isSuccess = false;
-        }else{
-            $mailText .= "Message: $message\n";
-        }
-
-        if ($isSuccess){
-            $headers = "De: $firstname $lastname <$mail>\r\nReply-To: $mail"; /*l entete du mail et sers pour le repondre
- auto*/
-            mail($mailTo, "Quelqu'un cherche a vous contacter sur le portfolio cv", $mailText, $headers);
-            $firstname = $lastname = $mail = $phone = $message = ""; /*remets les champs vide apres l envoie du mail*/
-        }
-    }
-
-
-    function isPhone($var){
-        /*expression reguliere qui permet de verifier si c est un numero de tel en comparant et en revoyant true ou
-        false*/
-        return preg_match("/^[0-9 ]*$/", $var);
-        /*le pattern compare que ça soit un chiffre entre 0 et 9 ou un espace qui est permit grace a l'etoile et l
-        etoile permet de repeter ça plusieur fois ou 0 fois si c est pas valide*/
-
-    }
-
-    function isMail($var){
-        return filter_var($var, FILTER_VALIDATE_EMAIL);/*compare la variable a un filter de validation d'email et
-    renvoie true si email valide et false si ça ne l est pas*/
-    }
-
-    /*function qui permets de verifier les inputs et les nettoient */
-    function veryfyInput($var){
-        $var = trim($var); /*enleve les espaces supplementaire, les retours a la ligne...*/
-        $var = stripslashes($var); /*permets d'enlever les / */
-        $var = htmlspecialchars($var);
-
-        return $var;
-    }
-?>
 
 <!doctype html>
 <html lang="en">
@@ -378,43 +295,43 @@
             <h2>contactez-moi !</h2>
             <div class="row">
                 <div class="col-lg-11 col-lg-offset-1">
-                    <form  id="contact-form" method="post" role="form" action="<?= htmlspecialchars($_SERVER['PHP_SELF']); ?>">
+                    <form  id="contact-form" method="post" role="form" action="">
                         <!--htmlspecialchars permets de contrer une faille XSS-->
                         <div class="row">
 
                             <div class="col-md-6">
                                 <label for="firstname">Prénom<span class="white"> *</span></label>
                                 <input type="text" id="firstname" name="firstname" class="form-control"
-                                       placeholder="Votre prénom" value="<?= $firstname; ?>">
-                                <p class="comments"><?= $firstnameError; ?></p>
+                                       placeholder="Votre prénom" >
+                                <p class="comments"></p>
                             </div>
 
                             <div class="col-md-6">
                                 <label for="lastname">Nom<span class="white"> *</span></label>
                                 <input type="text" id="lastname" name="lastname" class="form-control"
-                                       placeholder="Votre nom"  value="<?= $lastname; ?>">
-                                <p class="comments"><?= $lastnameError; ?></p>
+                                       placeholder="Votre nom"  >
+                                <p class="comments"></p>
                             </div>
 
                             <div class="col-md-6">
                                 <label for="mail">Email<span class="white"> *</span></label>
-                                <input type="email" id="mail" name="mail" required class="form-control"
-                                       placeholder="Votre email" value="<?= $mail; ?>">
-                                <p class="comments"><?= $mailError; ?></p>
+                                <input type="email" id="mail" name="mail" class="form-control"
+                                       placeholder="Votre email" >
+                                <p class="comments"></p>
                             </div>
 
                             <div class="col-md-6">
                                 <label for="phone">Téléphone</label>
                                 <input type="tel" id="phone" name="phone" class="form-control"
-                                       placeholder="Votre téléphone" value="<?= $phone; ?>">
-                                <p class="comments"><?= $phoneError; ?></p>
+                                       placeholder="Votre téléphone" >
+                                <p class="comments"></p>
                             </div>
 
                             <div class="col-md-12">
                                 <label for="message">Message<span class="white"> *</span></label>
                                 <textarea name="message" id="message" class="form-control" cols="30" rows="4"
-                                          placeholder="Votre message..."><?= $message; ?>"</textarea>
-                                <p class="comments"><?= $messageError; ?></p>
+                                          placeholder="Votre message..."></textarea>
+                                <p class="comments"></p>
                             </div>
 
                             <div class="col-md-12">
@@ -426,13 +343,7 @@
                             </div>
                         </div>
 
-                        <p class="thank-you" style="display:  <?php if($isSuccess){
-                                                                        echo 'block';
-                                                                    }else{
-                                                                        echo 'none';
-                                                                    }?>">
-                            Votre message a bien été envoyé, merci de m'avoir contacté !
-                        </p>
+
                     </form>
                 </div>
                <!-- <div class="col-md-6">
@@ -466,13 +377,11 @@
 
 
 
-
-
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.0.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 <script src="js/script.js"></script>
+<script src="js/mail-ajax.js"></script>
 
 </body>
 </html>
