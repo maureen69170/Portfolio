@@ -7,13 +7,6 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="TITLE" content="Portfolio Maureen Depresle">
-    <meta name="AUTHOR" content="Maureen Depresle">
-    <meta name="DESCRIPTION" content="site cv">
-    <meta name="KEYWORDS" content="portfolio, cv, maureen, depresle, maureen depresle">
-    <meta name="OWNER" content="Maureen Depresle">
-    <meta name="ROBOTS" content="index,all">
-    <meta name="Reply-to" content="maureen.depresle@gmail.com">
     <meta name="REVISIT-AFTER" content="1">
     <title>Portfolio CV Maureen Depresle</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
