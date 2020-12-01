@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
         $array["isSuccess"] = false;
     }else{
         $mailText .= "Prénom: {$array["firstname"]}\n";/*les acolades specifie a php que c est une variable c est a
-    la place de la concat */
+    la place de la concaténation */
     }
 
     if(empty($array["lastname"])){
@@ -82,8 +82,8 @@ function isMail($var){
 function veryfyInput($var){
     $var = trim($var); /*enleve les espaces supplementaire, les retours a la ligne...*/
     $var = stripslashes($var); /*permets d'enlever les / */
+    $var = strip_tags($var); /*permets d'enlever les les balises html et php */
     $var = htmlspecialchars($var);
 
     return $var;
 }
-?>
